@@ -17,5 +17,7 @@ node ("master") {
     
     stage "Test"
         echo "Testing ..."
-
+        if (currentBuild.result == 'SUCCESS') {
+            sh 'make publish'
+        }
 }
