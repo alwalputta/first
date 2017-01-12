@@ -3,9 +3,13 @@ node ("master") {
         echo "Init ..."
         echo "Build ID: $BUILD_ID"
         echo "Job name: $JOB_NAME"
-        echo "Branch name: $GITHUB_BRANCH_NAME"
+        echo "Branch name: $env.getEnvironment()
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
+        sh 'env > env.txt'
+        readFile('env.txt').split("\r?\n").each {
+            println it
+        }
     }
     stage ("Build") {
         echo "Building ..."
