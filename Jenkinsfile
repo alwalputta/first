@@ -1,8 +1,9 @@
 node ("master") {
     stage "Init"
         echo "Init ..."
-        echo "Branch name: $BUILD_ID"
+        echo "Build ID: $BUILD_ID"
         echo "Job name: $JOB_NAME"
+        echo "Branch name: $GITHUB_BRANCH_NAME"
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
         
