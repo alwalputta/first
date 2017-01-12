@@ -3,7 +3,7 @@ node ("master") {
         echo "Init ..."
         echo "Build ID: $BUILD_ID"
         echo "Job name: $JOB_NAME"
-        echo "Branch name: $env.getEnvironment()
+        echo "Branch name: $env.getEnvironment()"
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
         sh 'env > env.txt'
