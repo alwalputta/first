@@ -8,11 +8,12 @@ node ("master") {
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
         sh 'env > env.txt'
-        
+        /*
         def printParams() {
             env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
         }
         printParams()
+        */
     }
     
     stage ("Build") {
