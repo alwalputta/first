@@ -2,7 +2,7 @@ node {
     stage "SCM Checkout"
         echo "Checking out the code"
         echo "Branch name: $BUILD_ID"
-        echo "Branch name: $env.BRANCH_NAME"
+        echo "Job name: $JOB_NAME"
         
     stage "Create Files"
         echo "Creating files"
