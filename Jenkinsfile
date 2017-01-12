@@ -1,6 +1,7 @@
 node {
     stage "SCM Checkout"
         echo "Checking out the code"
+        echo "Branch name: $BRANCH_NAME"
         
     stage "Create Files"
         echo "Creating files"
