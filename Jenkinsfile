@@ -7,9 +7,6 @@ node ("master") {
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
         sh 'env > env.txt'
-        readFile('env.txt').split("\r?\n").each {
-            println it
-        }
     }
     stage ("Build") {
         echo "Building ..."
