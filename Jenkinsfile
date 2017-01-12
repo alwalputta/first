@@ -3,7 +3,8 @@ node ("master") {
         echo "Checking out the code"
         echo "Branch name: $BUILD_ID"
         echo "Job name: $JOB_NAME"
-    echo "Param name: ${params.lastname}"
+        echo "Param name: ${params.firstname}"
+        echo "Param name: ${params.lastname}"
         
     stage "Create Files"
         echo "Creating files"
