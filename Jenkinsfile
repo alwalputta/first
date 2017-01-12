@@ -1,5 +1,5 @@
 node ("master") {
-    stage "Init" {
+    stage ("Init") {
         echo "Init ..."
         echo "Build ID: $BUILD_ID"
         echo "Job name: $JOB_NAME"
@@ -7,7 +7,7 @@ node ("master") {
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
     }
-    stage "Build" {
+    stage ("Build") {
         echo "Building ..."
      // Make the output directory.
         sh "mkdir -p output"
@@ -16,7 +16,7 @@ node ("master") {
     // Write an useless file, which is not needed to be archived.
         writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
     }
-    stage "Test" {
+    stage ("Test") {
         echo "Testing ..."
         if (currentBuild.result == 'SUCCESS') {
             sh 'make publish'
