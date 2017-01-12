@@ -7,7 +7,13 @@ node ("master") {
         echo "Param name: $params.firstname"
         echo "Param name: ${params.lastname}"
         sh 'env > env.txt'
+        @NonCPS
+        def printParams() {
+            env.getEnvironment().each { name, value -> println "Name: $name -> Value $value" }
+        }
+        printParams()
     }
+    
     stage ("Build") {
         echo "Building ..."
      // Make the output directory.
@@ -17,6 +23,7 @@ node ("master") {
     // Write an useless file, which is not needed to be archived.
         writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
     }
+    
     stage ("Test") {
         echo "Testing ..."
         if (currentBuild.result == 'SUCCESS') {
