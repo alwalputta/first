@@ -1,4 +1,4 @@
-node {
+node ("master") {
     stage "SCM Checkout"
         echo "Checking out the code"
         echo "Branch name: $BUILD_ID"
